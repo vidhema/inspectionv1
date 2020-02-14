@@ -16,9 +16,9 @@ class CategoryAdmin(admin.ModelAdmin):
     inlines = [CategoryItemInline]
     save_as = True
 
-class Inspect_ItemAdmin(admin.ModelAdmin):
+class InspectItemAdmin(admin.ModelAdmin):
     #list_display = ('Cat',)
-    list_display=('category_name','site_name','Inspector_Name','Items','image')
+    list_display=('category_name','site_name','inspector_name','items','image')
     #inlines = [InspectedInline]
     save_as = True
     def has_add_permission(self, request, obj=None):
@@ -31,7 +31,7 @@ class Inspect_ItemAdmin(admin.ModelAdmin):
         return False'''
 
 
-admin.site.register(Inspect_Item, Inspect_ItemAdmin)
+admin.site.register(InspectItem, InspectItemAdmin)
 
 
 
@@ -42,5 +42,5 @@ admin.site.register(InspectionCategory,CategoryAdmin)
 #admin.site.register(Inspected_Item)
 admin.site.register(InspectionDetails)
 #admin.site.register(ItemInCategory)
-admin.site.register(sub)
-admin.site.register(stoffice)
+admin.site.register(Subsdiery)
+admin.site.register(StOffice)
