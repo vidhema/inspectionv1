@@ -10,4 +10,5 @@ urlpatterns = [
     path('add/',views.Add,name='add'),
     path('inspection/',views.ShowInspectionData.as_view(),name='inspectiondata'),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('update/update/',views.Add,name='add'),
 ]

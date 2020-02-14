@@ -8,7 +8,7 @@ from django.contrib import messages
 
 # Create your views here.
 class IndexView(TemplateView):
-    template_name = "inspectv1/index.html"
+    template_name = "inspectv1/base.html"
 
     
 class ShowInspectionData(ListView):
@@ -79,6 +79,7 @@ def Add(request):
         field_object = InspectionCategory._meta.get_field(field_name1)
         field_value1 = field_object.value_from_object(obj)
 
+
         obj2 =InspectionDetails.objects.first()
         field_object = InspectionDetails._meta.get_field(field_name3)
         field_value2 = field_object.value_from_object(obj2)
@@ -94,10 +95,11 @@ def Add(request):
         obj2 =ItemInCategory.objects.first()
         field_object = ItemInCategory._meta.get_field(field_name5)
         field_value5 = field_object.value_from_object(obj2)
-        print(request.POST['field'])
+        print(request.POST.get('field_{{list.sequence}}'))
         print(request.POST['status'])
         print(request.POST['my_image'])
-        if  request.POST.get('field') or request.POST.get('status'):
+        return HttpResponse("NotDone")
+        '''if  request.POST.get('field') or request.POST.get('status'):
             print("Come Inside")
             #print(request.POST.get('my_image'))
             shyam=Inspect_Item()
@@ -120,4 +122,4 @@ def Add(request):
             return HttpResponseRedirect('/inspect/inspection')
 
         else:
-            return HttpResponse("NotDone")   
+            return HttpResponse("NotDone") '''  

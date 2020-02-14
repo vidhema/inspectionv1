@@ -9,11 +9,11 @@
         <div id="first">
           <div class="myform form mt-5">
             <div class="logo mb-3">
-              <div class="col-md-12 text-center">
+              <div class="col-md-12 text-center"> 
                 <h1>Login</h1>
               </div>
             </div>
-            <form action="" method="post" name="login">
+            <form action="{% url 'update' %}" method="get" name="login">
               {%csrf_token%}
               <div class="form-group">
 

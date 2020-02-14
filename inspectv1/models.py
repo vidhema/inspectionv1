@@ -145,7 +145,10 @@ class Inspect_Item(models.Model):
         template = '{0.category_name} {0.site_name} {0.Inspector_Name}  {0.Items} {0.image}'
         return template.format(self)
 
+
+    
         
+
 
 
 
